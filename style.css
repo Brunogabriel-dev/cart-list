@@ -40,3 +40,29 @@ header .icon-cart span{
   width: 90%;
   filter: drop-shadow(0 50px 20px #0009);
 }
+.listProduct{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.listProduct .item{
+  background-color: #eeeee6;
+  padding: 20px;
+  border-radius: 20px;
+}
+.listProduct .item h2{
+  font-weight: 500;
+  font-size: large;
+}
+.listProduct .item .price{
+  letter-spacing: 7px;
+  font-size: small;
+}
+.listProduct .item button{
+  background-color: #353432;
+  color: #eee;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  border: none;
+}
