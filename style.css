@@ -8,4 +8,13 @@ body{
   max-width: 90vw;
   margin: auto;
   text-align: center;
+  padding-top: 10px;
+}
+svg{
+  width: 30px;
+}
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
