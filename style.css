@@ -22,7 +22,6 @@ header{
 header .icon-cart{
   position: relative;
 }
-
 header .icon-cart span{
   display: flex;
   width: 30px;
@@ -65,4 +64,12 @@ header .icon-cart span{
   border-radius: 20px;
   margin-top: 10px;
   border: none;
+  cursor: pointer;
+}
+.cartTab{
+  width: 400px;
+  background-color: #353432;
+  color: #eee;
+  position: fixed;
+  top: 0;
 }
