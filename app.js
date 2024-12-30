@@ -12,6 +12,16 @@ closeCart.addEventListener('click', () => {
   body.classList.toggle('showCart')
 })
 
+const addDataToHTML = () => {
+  listProductHTML.innerHTML = '';
+  if(listProducts.length > 0){
+    listProducts.forEach(product => {
+      let newProduct = document.createElement('div');
+      newProduct.classList.add('item');
+    })
+  }
+}
+
 
 const initApp = () => {
   // get data from json
@@ -19,8 +29,8 @@ const initApp = () => {
   .then(response => response.json())
   .then(data => {
     listProducts = data;
+    addDataToHTML();
 
-    console.log(listProducts);
   })
 }
 initApp();
