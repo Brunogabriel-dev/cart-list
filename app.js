@@ -18,6 +18,15 @@ const addDataToHTML = () => {
     listProducts.forEach(product => {
       let newProduct = document.createElement('div');
       newProduct.classList.add('item');
+      newProduct.innerHTML = `
+          <img src="image/1 (1).png" alt="">
+          <h2>NAME PRODUCT</h2>
+          <div class="price">$200</div>
+          <button class="addCart">
+             add  to cart
+          </button>
+      `;
+      listProductHTML.appendChild(newProduct);
     })
   }
 }
