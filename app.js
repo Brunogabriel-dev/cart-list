@@ -64,7 +64,25 @@ const addCartToHTML = () => {
   if(carts.length > 0){
     carts.forEach(cart => {
       let newCart = document.createElement('div');
-      newCart.classList.add()
+      newCart.classList.add('item');
+      newCart.innerHTML = `
+              <div class="image">
+          <img src="image/1 (1).png" alt="">
+        </div>
+        <div class="name">
+          NAME
+        </div>
+        <div class="totalPrice">
+          $200
+        </div>
+        <div class="quantity">
+          <span class="minus"><</span>
+          <span>1</span>
+          <span class="plus">></span>
+        </div>
+      </div>
+      `;
+      listCartHTML.appendChild(newCart);
     })
   }
 }
