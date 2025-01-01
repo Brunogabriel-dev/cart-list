@@ -49,8 +49,13 @@ const addToCart = (product_id) => {
       product_id: product_id,
       quantity: 1
     }]
+  }else if(positionThisProductInCart < 0){
+    carts.push({
+      product_id: product_id,
+      quantity: 10
+    });
   }else{
-
+    carts[positionThisProductInCart]
   }
   console.log(carts);
 }
