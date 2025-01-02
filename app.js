@@ -69,13 +69,13 @@ const addCartToHTML = () => {
       let info = listProducts[positionProduct];
       newCart.innerHTML = `
               <div class="image">
-          <img src="image/1 (1).png" alt="">
+          <img src="${info.image}" alt="">
         </div>
         <div class="name">
-          NAME
+         ${info.name}
         </div>
         <div class="totalPrice">
-          $200
+          $${info.price}
         </div>
         <div class="quantity">
           <span class="minus"><</span>
