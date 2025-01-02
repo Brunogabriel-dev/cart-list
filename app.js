@@ -107,8 +107,25 @@ listCartHTML.addEventListener('click', (event) => {
   }
 })
 const changeQuantity = (product_id, type) => {
-  let positionItemInCart = carts.findIndex((value) => value.product_id = product_id);
-  if
+  let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+  if(positionItemInCart >= 0){
+    switch (type) {
+      case 'plus':
+        carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+        break;
+
+        default:
+          let valueChange = carts[positionItemInCart].quantity - 1;
+          if(valueChange > 0){
+            carts[positionItemInCart].quantity = valueChange;
+          }else{
+            carts.splice(positionItemInCart, 1);
+          }
+          break;
+    }
+  }
+  addCartToMemory();
+  addCartToHTML();
 }
 const initApp = () => {
   // get data from json
