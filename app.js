@@ -71,6 +71,7 @@ const addCartToHTML = () => {
       totalQuantity = totalQuantity + cart.quantity;
       let newCart = document.createElement('div');
       newCart.classList.add('item');
+      newCart.dataset.id = cart.product_id;
       let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
       let info = listProducts[positionProduct];
       newCart.innerHTML = `
@@ -94,6 +95,21 @@ const addCartToHTML = () => {
   }
   iconCartSpan.innerText = totalQuantity;
 }
+listCartHTML.addEventListener('click', (event) => {
+  let positionClick = event.target;
+  if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
+    let type = 'minus';
+    if(positionClick.classList.contains('plus')){
+      type = 'plus';
+    }
+    changeQuantity(product_id, type);
+  }
+})
+const changeQuantity = (product_id, type) => {
+  let positionItemInCart = carts.findIndex((value) => value.product_id = product_id);
+  if
+}
 const initApp = () => {
   // get data from json
   fetch('products.json')
@@ -105,6 +121,7 @@ const initApp = () => {
     // get data from memory
     if(localStorage.getItem('cart')){
       carts = JSON.parse(localStorage.getItem('cart'));
+      addCartToHTML();
     }
 
 
