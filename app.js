@@ -58,6 +58,10 @@ const addToCart = (product_id) => {
     carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
   }
   addCartToHTML();
+  addCartToMemory();
+}
+const addCartToMemory = () => {
+  localStorage.setItem('cart', JSON.stringify(carts));
 }
 const addCartToHTML = () => {
   listCartHTML.innerHTML = '';
@@ -90,7 +94,6 @@ const addCartToHTML = () => {
   }
   iconCartSpan.innerText = totalQuantity;
 }
-
 const initApp = () => {
   // get data from json
   fetch('products.json')
@@ -98,6 +101,12 @@ const initApp = () => {
   .then(data => {
     listProducts = data;
     addDataToHTML();
+
+    // get data from memory
+    if(localStorage.getItem('cart')){
+      carts = JSON.parse(localStorage.getItem('cart'));
+    }
+
 
   })
 }
